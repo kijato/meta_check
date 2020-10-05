@@ -19,17 +19,18 @@ trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 $sql = "
 SELECT telepules, fekves, /*hrsz,*/ min(min_y) ||', '|| min(min_x) min, max(max_y) ||', '|| max(max_x) max
 FROM (
-	SELECT telepules, fekves, CASE instr(hrsz,'/') WHEN 0 THEN to_number(hrsz) ELSE to_number(substr(hrsz,1,instr(hrsz,'/')-1)) END hrsz,
+	SELECT telepules, f.ertek fekves, CASE instr(hrsz,'/') WHEN 0 THEN to_number(hrsz) ELSE to_number(substr(hrsz,1,instr(hrsz,'/')-1)) END hrsz,
 		min_y, min_x, max_y, max_x
 	FROM
 	( select terkep_id, replace(nev,'_jogerős','') telepules from dat.dtk_terkep where stat_kod=1 and nev like '%_jogerős' ) t,
-	(	SELECT terkep_id, fekves, regexp_replace(helyr_szam,'^0','') hrsz, min_y, min_x, max_y, max_x
+	(	SELECT terkep_id, fekves fekves_kod, regexp_replace(helyr_szam,'^0','') hrsz, min_y, min_x, max_y, max_x
 		FROM dt_obj_attrbc
 		WHERE verzio_jogeros IS NOT NULL AND verzio_ki IS NULL
 		union
-		SELECT terkep_id, fekves, regexp_replace(helyr_szam,'^0','') hrsz, min_y, min_x, max_y, max_x
+		SELECT terkep_id, fekves fekves_kod, regexp_replace(helyr_szam,'^0','') hrsz, min_y, min_x, max_y, max_x
 		FROM dt_obj_attrbd
 		WHERE verzio_jogeros IS NOT NULL AND verzio_ki IS NULL ) bc_bd
+	join dtc_fekves f on f.kod=bc_bd.fekves_kod
 	WHERE t.terkep_id = bc_bd.terkep_id
 ) A
 WHERE telepules LIKE :telepules
