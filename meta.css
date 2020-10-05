@@ -1,0 +1,65 @@
+* {
+	margin: 2px;
+	padding: 3px;
+	font-family: Verdana, Arial
+}
+
+body {
+	background-color: whitesmoke;
+}
+
+h1 {
+	background-color: orange;
+}
+
+table, th, td {
+	border-collapse: collapse;
+	border: 1px solid gray;
+}
+
+th {
+	background-color: orange;
+}
+
+td {
+	background-color: lightyellow;
+}
+
+tr:hover {
+	background-color: burlywood;
+	opacity: 0.8;
+}
+
+td:hover {
+	background-color: lavender;
+}
+
+tfoot td {
+	background-color: moccasin;
+	font-style: italic;
+}
+
+div {
+	/*border: 1px solid green;*/
+	width: auto;
+}
+
+span {
+	background-color: lightyellow;
+}
+
+tr>:nth-child(5){ text-align: right; }
+
+tr>:nth-child(6){ text-align: right; }
+
+tr>:nth-child(7){ text-align: right; }
+
+tr>:nth-child(8){ text-align: right; }
+
+fieldset {
+	background-color: cornsilk;
+}
+
+select, input {
+	font-size: 12px;
+}

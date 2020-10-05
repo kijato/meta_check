@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meta.css" type="text/css">
+	<script src="jquery-3.5.1.min.js"></script>
+    <script src="meta.js"></script>
+	<title>META ellenőrző</title>
+</head>
+<body>
+
+<h1>META ellenőrző</h1>
+
+<fieldset>
+	<legend><b>Szűrőfeltételek</b></legend>
+	<div> 
+		<!--label for="query">Keresőkifejezés: </label><input type="text" id="query" name="query" required /><span id="warn"></span-->
+		<label for="korzetek">Körzet: </label><select id="korzetek"><option>Nincs kiválasztva</option></select>
+		<label for="telepulesek">Település: </label><select id="telepulesek" disabled><option>Nincs kiválasztva</option></select>
+		<label for="fekvesek">Fekvés: </label><select id="fekvesek" disabled><option>Nincs kiválasztva</option></select>
+		<label for="hrsz_tol">HRSZ-tól: </label><input type="number" id="hrsz_tol" ></input>
+		<label for="hrsz_ig">HRSZ-ig: </label><input type="number" id="hrsz_ig" ></input>
+	</div>
+</fieldset>
+
+<p><span id="capt">-</span></p>
+
+<p><span id="min_max">-</span></p>
+
+<!--table>
+<caption</caption>
+<tr><th>a</th><th>b</th></tr>
+<tr><td>1</td><td>2</td></tr>
+<tr><td>3</td><td>4</td></tr>
+</table-->
+
+</body>
+</html>
