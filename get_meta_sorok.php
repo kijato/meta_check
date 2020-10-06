@@ -15,12 +15,18 @@
 	}
 
 	$sql="
-		SELECT --j.nev korzet, initcap(h.nev) telepules,
-			meta_id, f.ertek fekves, hrsz_tol, hrsz_ig, min_y ||', '|| min_x meta_min_y_x, max_y ||', '|| max_x meta_max_y_x
+		SELECT --j.nev korzet, initcap(h.nev) telepules, meta_id,
+			f.ertek fekves, hrsz_tol, hrsz_ig, min_y ||', '|| min_x meta_min_y_x, max_y ||', '|| max_x meta_max_y_x,
+			ju.ertek jogszabaly_utasitas, ma.ertek meretarany, v.ertek eredeti_vetulet, v2.ertek vetuleti_rendszer
+			--CASE WHEN v.ertek=v2.ertek THEN v2.ertek ELSE v2.ertek || ' [' || v.ertek ||']' END vetuleti_rendszerek
 		FROM dt_meta m
 			JOIN helysegek h ON h.id = m.telepules_id
-			JOIN jarasok j ON j.korzetszam = h.korzetszam
+			JOIN jarasok j ON j.korzetszam = h.korzetszam AND j.megyekod = h.megyekod
 			JOIN dtc_fekves f ON f.kod = m.fekv_kod
+			JOIN dat.dtc_jogsz_utasitas ju ON ju.kod = m.eredet_megfeleloseg_kod
+			JOIN dtc_vetulet v ON v.kod = m.eredet_vetulet_kod
+			JOIN dtc_vetulet v2 ON v2.kod = m.adatkeszlet_vetulet_kod
+			JOIN dat.dtc_meretarany ma ON ma.kod = m.eredet_ma_kod
 		WHERE megsz_datum is null
 		  and j.nev LIKE '%'||substr(:korzet,1,length(:korzet)-1)||'%'
 		  and initcap(h.nev) like :telepules
