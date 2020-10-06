@@ -12,21 +12,36 @@
 
 <h1>META ellenőrző</h1>
 
+<p>
+
 <fieldset>
-	<legend><b>Szűrőfeltételek</b></legend>
+	<legend><b>Szűrőfeltételek a DT_META tábla adataihoz</b></legend>
 	<div> 
 		<!--label for="query">Keresőkifejezés: </label><input type="text" id="query" name="query" required /><span id="warn"></span-->
 		<label for="korzetek">Körzet: </label><select id="korzetek"><option>Nincs kiválasztva</option></select>
 		<label for="telepulesek">Település: </label><select id="telepulesek" disabled><option>Nincs kiválasztva</option></select>
-		<label for="fekvesek">Fekvés: </label><select id="fekvesek" disabled><option>Nincs kiválasztva</option></select>
-		<label for="hrsz_tol">HRSZ-tól: </label><input type="number" id="hrsz_tol" ></input>
-		<label for="hrsz_ig">HRSZ-ig: </label><input type="number" id="hrsz_ig" ></input>
 	</div>
 </fieldset>
 
-<p><span id="capt">-</span></p>
+<div id="capt">-</div>
+<div id="capt2"><table><caption>META adatsorok közé nem sorolható TAKAROS hrsz-ek<tr><th>A<th>B<th>C<tr><td>1a<td>1b<td>1c<tr><td>2a<td>2b<td>2c</table></div>
 
-<p><span id="min_max">-</span></p>
+</p>
+
+<p>
+
+<fieldset>
+	<legend><b>Szűrőfeltételek a befoglaló téglalaphoz</b></legend>
+	<div> 
+		<label for="fekvesek">Fekvés: </label><select id="fekvesek" disabled><option>Nincs kiválasztva</option></select>
+		<label for="hrsz_tol">HRSZ-tól: </label><input type="number" id="hrsz_tol" disabled></input>
+		<label for="hrsz_ig">HRSZ-ig: </label><input type="number" id="hrsz_ig" disabled></input>
+	</div>
+</fieldset>
+
+<div id="min_max">-</div>
+
+</p>
 
 <!--table>
 <caption</caption>

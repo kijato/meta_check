@@ -1,7 +1,8 @@
 * {
 	margin: 2px;
 	padding: 3px;
-	font-family: Verdana, Arial
+	font-family: Verdana, Arial;
+	font-size: 11px;
 }
 
 body {
@@ -15,6 +16,13 @@ h1 {
 table, th, td {
 	border-collapse: collapse;
 	border: 1px solid gray;
+}
+
+caption {
+	background-color: moccasin;
+	margin: 0;
+	border: 1px solid gray;
+	border-bottom-width: 0;
 }
 
 th {
@@ -61,5 +69,5 @@ fieldset {
 }
 
 select, input {
-	font-size: 12px;
+	font-size: 11px;
 }

@@ -14,7 +14,7 @@
 	$sql="SELECT initcap(h.NEV) telepules
 	FROM HELYSEGEK h,
          JARASOK j
-	WHERE j.nev LIKE '%'||:korzet||'%'
+	WHERE j.nev LIKE '%'||substr(:korzet,1,length(:korzet)-1)||'%'
 	  AND h.MEGYEKOD = j.MEGYEKOD
 	  AND h.KORZETSZAM = j.KORZETSZAM
 	ORDER BY 1";

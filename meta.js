@@ -17,6 +17,7 @@
       );
 	 $("#telepulesek").prop('disabled', false);
 	 $("#capt").html("Üres adathalmaz..."); 
+	 $("#min_max").html("Üres adathalmaz..."); 
   }
 
   function fill_fekvesek() {
@@ -27,16 +28,17 @@
            { korzet: korzet, telepules: telepules, sid: veletlen },
            function(valasz) { $("#fekvesek").html(valasz); }
       );
-	  $("#fekvesek").prop('disabled', false);
+	  //$("#fekvesek").prop('disabled', false);
+	  $("#hrsz_tol").prop('disabled', false);
+	  $("#hrsz_ig").prop('disabled', false);
   }
 
   function get_rows() {
 	 var veletlen    = Math.random;
 	 var korzet = $("#korzetek").val();
 	 var telepules = $("#telepulesek").val();
-	 var fekves = $("#fekvesek").val();
 	 $.get("get_meta_sorok.php",
-           { korzet: korzet, telepules: telepules, fekves: fekves, sid: veletlen },
+           { korzet: korzet, telepules: telepules, sid: veletlen },
            function(valasz) { $("#capt").html(valasz); }
       );
   }
@@ -74,7 +76,7 @@
       $("#korzetek").change(fill_telepulesek);
       $("#telepulesek").change(fill_fekvesek);
       $("#telepulesek").change(get_rows);
-      $("#fekvesek").change(get_rows);
+      $("#fekvesek").change(fill_min_max);
 	  $("#hrsz_tol").keyup(set_hrsz_ig);
 	  $("#hrsz_tol").change(set_hrsz_ig);
 	  $("#hrsz_ig").keyup(set_hrsz_tol);

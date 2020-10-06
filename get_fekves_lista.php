@@ -13,16 +13,16 @@
 	}
 
 	$sql="
-SELECT kod, ertek
-FROM dtc_fekves
-WHERE kod IN (
-	SELECT DISTINCT fekv_kod
-	FROM dt_meta
-	WHERE telepules_id = ( select id from helysegek where initcap(nev) = :telepules )
-	  AND megsz_datum IS NULL
-)
-ORDER by ertek
-";
+	SELECT kod, ertek
+	FROM dtc_fekves
+	WHERE kod IN (
+		SELECT DISTINCT fekv_kod
+		FROM dt_meta
+		WHERE telepules_id = ( select id from helysegek where initcap(nev) = :telepules )
+		  AND megsz_datum IS NULL
+	)
+	ORDER by ertek
+	";
 	$stid = oci_parse($conn, $sql);
 	oci_bind_by_name($stid,":telepules", $telepules);
 	oci_execute($stid);
