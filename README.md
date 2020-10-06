@@ -1,2 +1,12 @@
-# meta_check
-DAT(R) META-adat ellenőrző
+## DAT(R) META-adat ellenőrző
+
+A webapplikáció a DATR-ben tárolt META-adatok ellenőrzésének és javításának támogatására készült.
+
+#### Rendszerkövetelmények:
+- PHP-képes webszerver
+- Oracle Instant Client
+- az előző két tétel helyes beállításából eredő, működőképes PHP-OCI8 kiterjesztés
+
+#### Fejlesztési célok:
+- Összevetés a TAKAROS hrsz-aival
+- META adatlap kiadás az iktatószám alapján
