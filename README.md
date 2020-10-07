@@ -11,3 +11,6 @@ A webapplikáció a DATR-ben tárolt META-adatok ellenőrzésének és javítás
 #### Fejlesztési célok:
 - részletes META adatok listázása *(nem csak az "összefoglaló")*
 - META adatlap kiadás az iktatószám alapján
+
+#### Screenshot
+![Képernyőkép](https://github.com/kijato/meta_check/blob/main/meta_check_screenshot.png)
