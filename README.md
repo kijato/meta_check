@@ -9,5 +9,5 @@ A webapplikáció a DATR-ben tárolt META-adatok ellenőrzésének és javítás
 - a 'config-minta.php' fájl mintájára készült 'config.php'
 
 #### Fejlesztési célok:
-- Összevetés a TAKAROS hrsz-aival
+- részletes META adatok listázása *(nem csak az "összefoglaló)
 - META adatlap kiadás az iktatószám alapján
