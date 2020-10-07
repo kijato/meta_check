@@ -15,9 +15,8 @@
 	}
 
 	$sql="
-	SELECT DISTINCT t.telepules, t.fekves, t.hrsz
-	FROM 
-	(
+	WITH
+	takaros_hrszek AS (
 		SELECT DISTINCT --rpad(k.korzet,30,' ') as korzet,
 				h.hely_id,
 				rpad(initcap(he1.nev),30,' ') as telepules,
@@ -37,14 +36,20 @@
 		  and fo1.stat_kod in (2,8)
 		  and h.stat_kod in (2,8)
 		  and h.hrsz<>9999999
-		ORDER BY telepules, fekves, hrsz
-	) t,
-	dt_meta m
-	WHERE m.megsz_datum IS NULL
-	  AND m.telepules_id = t.hely_id
-	  AND m.fekv_kod = t.fekv_kod
-	  AND t.hrsz BETWEEN m.hrsz_tol AND m.hrsz_ig
-	ORDER BY 1,2,3
+		ORDER BY 1,2,3 --telepules, fekves, hrsz
+	),
+	meta_hrszek AS (
+		SELECT telepules_id, fekv_kod, hrsz_tol, hrsz_ig
+		FROM DT_META
+		WHERE megsz_datum IS NULL
+		  AND telepules_id = ( SELECT id FROM helysegek WHERE initcap(nev) = :telepules )
+	)
+	SELECT t.telepules, t.fekves, LISTAGG(t.hrsz,', ') WITHIN group ( ORDER  BY t.hrsz ) helyrajziszamok
+	FROM takaros_hrszek t
+		LEFT OUTER JOIN meta_hrszek m ON t.hely_id = m.telepules_id AND t.fekv_kod = m.fekv_kod AND t.hrsz BETWEEN m.hrsz_tol AND m.hrsz_ig
+	WHERE m.hrsz_tol IS NULL OR m.hrsz_ig IS NULL
+	GROUP BY t.telepules, t.fekves
+	ORDER BY 1,2
 	";
 	$stid = oci_parse($conn, $sql);
 	oci_bind_by_name($stid, ":telepules", $telepules);

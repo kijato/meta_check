@@ -41,6 +41,10 @@
            { korzet: korzet, telepules: telepules, sid: veletlen },
            function(valasz) { $("#capt").html(valasz); }
       );
+	 $.get("get_meta_hiany.php",
+           { korzet: korzet, telepules: telepules, sid: veletlen },
+           function(valasz) { $("#capt2").html(valasz); }
+      );
   }
 
   function set_hrsz_ig() {
