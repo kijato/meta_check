@@ -17,7 +17,7 @@
 	}
 
 	$sql = "
-	SELECT telepules, fekves, /*hrsz,*/ min(min_y) ||', '|| min(min_x) bal_also, max(max_y) ||', '|| max(max_x) jobb_felso
+	SELECT telepules, fekves, /*hrsz,*/ min(min_y) ||', '|| min(min_x) bal_also_y_x, max(max_y) ||', '|| max(max_x) jobb_felso_y_x
 	FROM (
 		SELECT telepules, f.ertek fekves, CASE instr(hrsz,'/') WHEN 0 THEN to_number(hrsz) ELSE to_number(substr(hrsz,1,instr(hrsz,'/')-1)) END hrsz,
 			min_y, min_x, max_y, max_x

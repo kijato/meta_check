@@ -17,7 +17,10 @@
       );
 	 $("#telepulesek").prop('disabled', false);
 	 $("#capt").html("Üres adathalmaz..."); 
-	 $("#min_max").html("Üres adathalmaz..."); 
+	 $("#min_max").html("Üres adathalmaz...");
+	 $("#hrsz_tol").prop('disabled', true);
+	 $("#hrsz_ig").prop('disabled', true);
+	 //$("#korzetek").off(mousemove);	 
   }
 
   function fill_fekvesek() {
@@ -77,7 +80,10 @@
    $(document).ready( function() {
       //$("#korzetek").mousemove(fill_korzetek);
       fill_korzetek();
+      $("#korzetek").click(fill_telepulesek);
       $("#korzetek").change(fill_telepulesek);
+      $("#telepulesek").click(fill_fekvesek);
+      $("#telepulesek").click(get_rows);
       $("#telepulesek").change(fill_fekvesek);
       $("#telepulesek").change(get_rows);
       $("#fekvesek").change(fill_min_max);
