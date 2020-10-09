@@ -17,6 +17,7 @@
       );
 	 $("#telepulesek").prop('disabled', false);
 	 $("#capt").html("Üres adathalmaz..."); 
+	 $("#capt2").html("Üres adathalmaz..."); 
 	 $("#min_max").html("Üres adathalmaz...");
 	 $("#hrsz_tol").prop('disabled', true);
 	 $("#hrsz_ig").prop('disabled', true);
@@ -52,7 +53,7 @@
 
   function set_hrsz_ig() {
 	  var oldValue = $("#hrsz_tol").val();
-	  if ( oldValue > 1 ) {
+	  if ( oldValue >= 1 ) {
 	    $("#hrsz_ig").val( ++oldValue )
 	  }
 	  $("#min_max").html("Egy kis türelmet kérek...")

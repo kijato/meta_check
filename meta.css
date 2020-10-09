@@ -16,6 +16,7 @@ h1 {
 table, th, td {
 	border-collapse: collapse;
 	border: 1px solid gray;
+	min-width: 100px;
 }
 
 caption {
@@ -45,6 +46,7 @@ td:hover {
 tfoot td {
 	background-color: moccasin;
 	font-style: italic;
+	font-size: 10px;
 }
 
 div {
