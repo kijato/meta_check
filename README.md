@@ -1,8 +1,9 @@
 ## DAT(R) META-adat ellenőrző
 
 A webapplikáció a DATR-ben tárolt META-adatok ellenőrzésének és javításának támogatására készült.
+
 Jelen állapotában képes megmutatni:
-- azokat a hrsz-eket, melyek a META "adatbázisból" hiányoznak
+- azokat a hrsz-eket, melyek a META "adatbázisból" hiányoznak,
 - a megadott hrsz tartomány alapján a BC-BD táblákból kiolvasott min(y,x) - max(y,x) értékeket, azaz a befoglaló téglalapot.
 
 #### Rendszerkövetelmények:
@@ -14,7 +15,7 @@ Jelen állapotában képes megmutatni:
 #### Fejlesztési célok:
 - azon META tól-ig határ-hrszok listázása, melyek nem létező hrsz-ekre hivatkoznak
 - részletes META adatok listázása *(nem csak az "összefoglaló")*
-- META adatlap kiadás az iktatószám alapján
+- a jogszabálynak megfelelő META adatlap kiadás az iktatószám alapján
 
-#### Screenshot
+#### Képernyőkép
 ![Képernyőkép](https://github.com/kijato/meta_check/blob/main/meta_check_screenshot.png)
