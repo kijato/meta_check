@@ -13,6 +13,7 @@ Jelen állapotában képes megmutatni:
 - a 'config-minta.php' fájl mintájára készült 'config.php'
 
 #### Fejlesztési célok:
+- az aktuális befoglaló téglalap helyességének ellenőrzése az adott tartományhoz tartozó, BC-BD táblákból kiolvasott min(y,x) - max(y,x) értékekk alapján
 - azon META tól-ig határ-hrszok listázása, melyek nem létező hrsz-ekre hivatkoznak
 - részletes META adatok listázása *(nem csak az "összefoglaló")*
 - a jogszabálynak megfelelő META adatlap kiadás az iktatószám alapján
