@@ -24,7 +24,7 @@
 				decode(h.fekv_kod, 1 , 'belterület' ,2 ,'külterület',3, 'zártkert') as fekves,
 				h.hrsz
 				--CASE h.fekv_kod WHEN 2 THEN '0' || to_char(h.hrsz) ELSE to_char(h.hrsz) END || CASE nvl(h.hrsz1,0) WHEN 0 THEN null ELSE '/' || h.hrsz1 END as helyrajziszam
-		FROM --(SELECT ertek AS korzet FROM parameterek WHERE kulcs='FHCIM1') k,
+		FROM --(SELECT ertek AS korzet FROM takaros.parameterek WHERE kulcs='FHCIM1') k,
 			 takaros.hrszek h,
 			 takaros.helysegek he1,
 			 takaros.foldreszletek fo1,
@@ -40,9 +40,9 @@
 	),
 	meta_hrszek AS (
 		SELECT telepules_id, fekv_kod, hrsz_tol, hrsz_ig
-		FROM DT_META
+		FROM dat.DT_META
 		WHERE megsz_datum IS NULL
-		  AND telepules_id = ( SELECT id FROM helysegek WHERE initcap(nev) = :telepules)
+		  AND telepules_id = ( SELECT id FROM takaros.helysegek WHERE initcap(nev) = :telepules)
 	)
 	SELECT t.telepules, t.fekves, t.hrsz --LISTAGG(t.hrsz,', ') WITHIN group ( ORDER  BY t.hrsz ) -- 'Kiskunfélegyháza' esetében: SQL Error [1489] [72000]: ORA-01489: a karakter konkatenáció eredménye túl hosszú
 	FROM takaros_hrszek t

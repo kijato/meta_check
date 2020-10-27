@@ -13,10 +13,10 @@
 
 	$sql="
 	SELECT initcap(nev) telepules
-	FROM HELYSEGEK
+	FROM takaros.HELYSEGEK
 	WHERE ( megyekod,korzetszam ) IN (
 			SELECT megyekod, korzetszam
-			FROM jarasok
+			FROM takaros.jarasok
 			WHERE nev LIKE '%'||substr(:korzet,1,length(:korzet)-1)||'%'
 			)
 	  AND map_id is not null

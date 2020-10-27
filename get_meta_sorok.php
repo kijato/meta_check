@@ -27,13 +27,13 @@
 			min_y ||', '|| min_x bal_also_y_x, max_y ||', '|| max_x jobb_felso_y_x
 			--haszn, korlatozas, adatall_nyelve
 			--kfh.ertek hivatal_neve
-		FROM dt_meta m
-			JOIN helysegek h ON h.id = m.telepules_id
-			JOIN jarasok j ON j.korzetszam = h.korzetszam AND j.megyekod = h.megyekod
-			JOIN dtc_fekves f ON f.kod = m.fekv_kod
+		FROM dat.dt_meta m
+			JOIN takaros.helysegek h ON h.id = m.telepules_id
+			JOIN takaros.jarasok j ON j.korzetszam = h.korzetszam AND j.megyekod = h.megyekod
+			JOIN dat.dtc_fekves f ON f.kod = m.fekv_kod
 			JOIN dat.dtc_jogsz_utasitas ju ON ju.kod = m.eredet_megfeleloseg_kod
-			JOIN dtc_vetulet v ON v.kod = m.eredet_vetulet_kod
-			JOIN dtc_vetulet v2 ON v2.kod = m.adatkeszlet_vetulet_kod
+			JOIN dat.dtc_vetulet v ON v.kod = m.eredet_vetulet_kod
+			JOIN dat.dtc_vetulet v2 ON v2.kod = m.adatkeszlet_vetulet_kod
 			JOIN dat.dtc_meretarany ma ON ma.kod = m.eredet_ma_kod
 			--JOIN dat.dtc_korzeti_fh kfh ON kfh.kod = m.hiv_id
 		WHERE megsz_datum is null
