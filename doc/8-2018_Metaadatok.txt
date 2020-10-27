@@ -1,0 +1,21 @@
+28. Metaadatok
+
+65. § (1) Földmérési célú adatszolgáltatás esetén az Fttv. 5. § (1) bekezdésében meghatározott metaadatokat szöveges kiterjesztésû (meta.txt) fájlban kell az adatszolgáltatónak az adatigénylõ rendelkezésére bocsátani.
+
+(2) Az (1) bekezdésben meghatározott fájlnak az alábbiakat kell tartalmaznia:
+	a) az adatkészlet elnevezése,
+	b) az adatkészlet aktualitása,
+	c) az eredeti adatkészlet forrása,
+	d) az eredeti adatforrás vetületi rendszere,
+	e) az eredeti adatforrás méretaránya,
+	f) adattípus (vektoros, raszteres),
+	g) szolgáltatási formátum,
+	h) az adatszolgáltató neve,
+	i) az adatszolgáltató címe,
+	j) az adatszolgáltató internetes elérhetõsége és elektronikus levélcíme,
+	k) kulcsszavak,
+	l) felhasználási korlátozások,
+	m) az átadott adatállomány nyelve,
+	n) kiterjedés (maximális és minimális Y és X koordináta EOV-ban).
+
+(3) A nem földmérési célú, papíralapú térképmásolatok kiadása esetén a (2) bekezdés szerinti metaadatok közül a b), c), d) és e) pontban meghatározottakat kell a másolaton feltüntetni.

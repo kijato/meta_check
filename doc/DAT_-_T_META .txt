@@ -1,0 +1,45 @@
+Digitális alaptérkép metaadatainak gyűjtőtáblázata 
+A táblázat neve: T_META 
+Állami alapadatok, alapadatok és háttéradatok szolgáltatásához szükséges táblázat. 
+A táblázat adatai: 
+ 
+Adatmező     
+Neve                     Típusa  Hossza  Megnevezés                                   Egyéb jellemzők 
+meta_id                  N       6       Metaadat azonosító sorszáma                  K 
+telepules_id             N       6       Település azonosítója a KSH kódtáblázatban   K, T_KSH_KOZIG 
+fekv_kod                 N       1       Fekvés kódja                                 K, T_FEKVES 
+hrsz_tol                 N       7       A legkisebb hrsz                             K 
+hrsz_ig                  N       7       A legnagyobb hrsz                            K 
+eredet_megfeleloseg_kod  N       2       eredeti adatkészlet előállítása során alkalmazott szakmai utasítás, jogszabály K, T_JOGSZ_UTASITAS 
+eredet_ma_kod            N       2       Eredeti térképi adatállomány méretaránya  K. T_MERETARANY 
+eredet_vetulet_kod       N       2       Milyen vetületi rendszerben történt az eredet térkép felmérése K, T_VETULET 
+adatkeszlet_eloallit     AN    200       Milyen módszerrel került előállításra a digitális adatkészlet K 
+adatkeszlet_vetulet_kod  N       2       Milyen vetületi rendszerű a DAT objektumok vonatkozási rendszere K, T_VETULET 
+egyezoseg                AN     20       Térkép egyezősége az Ingatlan-nyilvántartással, digitális adatkészlet forgalomba adására/helyezésére vonatkozó K 
+forgalom_datuma          N       4       Az állami ingatlan-nyilvántartási térképi adatbázis forgalomba adásának/helyezésének éve K 
+adatformatum             AN      8       Szolgáltatott digitális adatformátuma (DAT, DXF, IBN) O 
+haszn                    AN    100       Adathozzáférés és használat feltételei  K, 
+korlatozas               AN    100       Adathasználat korlátozása  K, 
+adatall_nyelve           AN     10       Az adatállomány nyelve  K 
+min_x                    N      13       minimális X koordináta EOV-ban  K 
+min_y                    N      13       minimális Y koordináta EOV-ban  K 
+max_x                    N      13       Maximális X koordináta EOV-ban  K 
+max_y                    N      13       Maximális Y koordináta EOV-ban  K 
+kulcs                    AN    100       Kulcsszavak  K 
+hiv_id                   N       3       Az adatot szolgáltató hivatal kódja  K, T_KORZETI_FH 
+hiv_cim                  AN    100       Az adatszolgáltató hivatal címe  K 
+adatsz_elerh             AN    100       Adatszolgáltató internetes elérhetősége  K 
+megsz_datum              AN      8       Az adatrekord érvényessége megszüntetésének dátuma K 
+ 
+Kulcs: meta_id. 
+Értéktartomány:
+  meta_id:                 1 – 999 999, 
+  telepules_id:            T_KSH_KOZIG táblázat kozig_id adatmezője szerint, 
+  fekv_kod:                T_FEKVES kódtáblázat szerint,  
+  Eredet_megfeleloseg_kod: T_JOGSZ_UTASITAS kódtáblázat szerint,  
+  Eredet_ma_kod:           T_MERETARANY kódtáblázat szerint, 
+  eredet_vetulet_kod:      T_VETULET kódtáblázat szerint, 
+  hiv_id:                  T_KORZETI_FH kódtáblázat szerint, 
+  megsz_datum:             F_DATUMOK szerint, vagy NULL. 
+ 
+Forrás: a 25/2013. (IV. 16.) VM rendelet 
